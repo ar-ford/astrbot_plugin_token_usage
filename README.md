@@ -80,6 +80,17 @@ git push -u origin main
 
 > 如果远端仓库里已经有手动上传的 ZIP 等内容、与本地历史没有关联，首次推送需要执行 `git push -u origin main --force` 用插件源码仓库替换远端内容。
 
+## 发布到插件市场
+
+上传 GitHub 只是源码托管，**不会自动出现在 AstrBot 插件市场**。要让所有 AstrBot 用户能在 WebUI 的插件市场搜索到，需要：
+
+1. 确认 GitHub 仓库根目录有 `metadata.yaml`、`main.py` 和 `pages/`（ZIP 放在仓库里无效）；
+2. 打开 [AstrBot Cloud 发布页](https://cloud.astrbot.app/publish)，使用 GitHub 账号登录；
+3. 填写仓库地址 `https://github.com/ar-ford/astrbot_plugin_token_usage` 并提交；
+4. 等待 AstrBot Cloud 的自动校验与审核；通过后市场索引更新，用户即可搜索安装。
+
+在审核通过前，其他用户仍可以通过 WebUI 的 `安装插件 → 从 URL 安装` 直接填入本仓库地址使用。
+
 ## 实现说明
 
 - `main.py` 注册 `GET /astrbot_plugin_token_usage/stats`，读取 `provider_stats` 表，在 SQLite 中按 UTC 小时聚合，再用 Python 换算成本地日期，避免一次性把整月数据读进内存。
