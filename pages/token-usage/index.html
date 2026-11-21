@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <title>Token 用量统计</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="page-header">
+        <div class="page-heading">
+          <h1 id="page-title">Token 用量统计</h1>
+          <p id="page-subtitle" class="page-subtitle">近 30 天 · 数据按本地时区统计</p>
+        </div>
+        <div class="page-actions">
+          <span id="updated-at" class="updated-at"></span>
+          <button id="refresh" class="icon-button" type="button" title="刷新" aria-label="刷新">
+            <svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 11a8 8 0 1 0-2.3 6.3" />
+              <path d="M20 4v7h-7" />
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <div id="error" class="alert hidden" role="alert">
+        <div class="alert-body">
+          <span id="error-text">加载失败</span>
+          <button id="retry" class="text-button" type="button">重试</button>
+        </div>
+      </div>
+
+      <div id="loading" class="loading-wrap" aria-live="polite">
+        <span class="spinner" aria-hidden="true"></span>
+      </div>
+
+      <main id="content" class="hidden">
+        <section id="overview" class="overview-grid" aria-label="概览"></section>
+
+        <div class="section-toolbar">
+          <h2 id="trend-title" class="section-title">Token 趋势</h2>
+          <div id="range-switch" class="range-switch" role="group" aria-label="统计范围"></div>
+        </div>
+
+        <div class="panel-grid">
+          <section class="stat-card chart-card">
+            <div class="card-head">
+              <div>
+                <h3 id="area-title" class="card-title">每日 Token 用量</h3>
+                <p id="area-note" class="card-note">按本地日期汇总输入与输出 Token</p>
+              </div>
+              <div class="section-metric">
+                <span id="area-metric-label" class="metric-label">区间总 Tokens</span>
+                <strong id="area-metric-value" class="metric-value">0</strong>
+              </div>
+            </div>
+            <div id="area-chart" class="chart chart-area"></div>
+          </section>
+
+          <section class="stat-card list-card">
+            <div class="card-head compact">
+              <h3 id="provider-rank-title" class="card-title">服务商排名</h3>
+            </div>
+            <div id="provider-rank" class="rank-list"></div>
+          </section>
+        </div>
+
+        <div class="section-head">
+          <h2 id="model-section-title" class="section-title">模型调用</h2>
+        </div>
+
+        <div class="panel-grid token-grid">
+          <section class="stat-card chart-card">
+            <div class="card-head">
+              <div>
+                <h3 id="stack-title" class="card-title">各服务商每日 Token</h3>
+              </div>
+            </div>
+            <div id="stack-chart" class="chart chart-stack"></div>
+          </section>
+
+          <div class="side-column">
+            <section class="stat-card total-card">
+              <div id="total-label" class="card-label">近 30 天总 Tokens</div>
+              <div class="total-value">
+                <span id="total-value">0</span>
+                <span class="total-unit">Tokens</span>
+              </div>
+              <div id="total-calls" class="card-note">共 0 次调用</div>
+              <div id="total-meta" class="meta-list"></div>
+            </section>
+
+            <section class="stat-card list-card">
+              <div class="card-head compact">
+                <h3 id="model-rank-title" class="card-title">模型排名</h3>
+              </div>
+              <div id="model-rank" class="rank-list rank-list-scrollable"></div>
+            </section>
+          </div>
+        </div>
+
+        <section class="stat-card list-card session-card">
+          <div class="card-head compact">
+            <h3 id="session-rank-title" class="card-title">会话用量排名</h3>
+          </div>
+          <div id="session-rank" class="rank-list"></div>
+        </section>
+
+        <footer id="footer" class="page-footer"></footer>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+name: astrbot_plugin_token_usage
+display_name: Token 用量
+short_desc: 在插件页面查看最近 30 天到 1 年的 Token 使用趋势、模型与服务商排名。
+desc: |
+  在 AstrBot WebUI 的插件页面中，以「数据与日志 → 统计」同款界面查看 Token 使用情况。
+
+  功能：
+  - 支持近 30 天、90 天、180 天、1 年四种统计范围，页面默认展示最近 30 天；
+  - 概览卡片展示区间 Token 总量、今日用量、调用次数、成功率、平均首字耗时和活跃会话数；
+  - 每日 Token 趋势面积图、各服务商每日堆叠柱状图、模型排名、服务商排名、会话用量排名；
+  - 数据直接读取 AstrBot 自带的 provider_stats 表，只读、不落盘、不改动任何用户数据；
+  - 仅在 Dashboard 以内嵌视图方式加载，遵循 AstrBot 的视图主题与国际化机制。
+
+  安装后在「插件 → Token 用量」详情页或左侧「扩展功能 → 插件视图」中打开「Token 用量」即可。
+version: 1.0.0
+author: arford
+repo: https://github.com/ar-ford/astrbot_plugin_token_usage
+astrbot_version: ">=4.24.2,<5"
+tags:
+  - token
+  - 统计
+  - 数据
+  - WebUI

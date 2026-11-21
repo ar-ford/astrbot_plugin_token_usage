@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "display_name": "Token Usage",
+    "short_desc": "View Token usage trends, model and provider rankings for the last 30 days up to 1 year in a plugin view.",
+    "desc": "Shows Token usage in an AstrBot WebUI plugin view with the same look as Data & Logs → Statistics, covering the last 30, 90, 180 days or 1 year."
+  },
+  "views": {
+    "token-usage": {
+      "title": "Token Usage",
+      "description": "Token usage trends, model and provider rankings for the last 30, 90, 180 days or 1 year.",
+      "pageTitle": "Token Usage",
+      "subtitle": "{range} · {timezone} · Source: AstrBot provider calls",
+      "localTimezone": "local time",
+      "refresh": "Refresh",
+      "updatedAt": "Updated {time}",
+      "rankDetail": "{tokens} tokens · {calls} calls · {share} of total",
+      "ranges": {
+        "days": "Last {days} days",
+        "oneYear": "Last year",
+        "daysShort": "{days} days",
+        "oneYearShort": "1 year"
+      },
+      "cards": {
+        "rangeTokens": "{range} Tokens",
+        "todayTokens": "Today",
+        "calls": "Calls",
+        "successRate": "Success rate",
+        "avgTtft": "Avg TTFT",
+        "sessions": "Active sessions",
+        "errorsTitle": "{count} failed calls"
+      },
+      "sections": {
+        "trend": "Token trend",
+        "providerRanking": "Provider ranking",
+        "modelCalls": "Model calls",
+        "modelRanking": "Model ranking",
+        "sessionRanking": "Session ranking"
+      },
+      "chart": {
+        "areaTitle": "Daily Token usage",
+        "areaNote": "Local dates, input and output tokens · {timezone}",
+        "areaLabel": "Daily Token usage trend",
+        "stackTitle": "Daily Tokens by provider",
+        "stackLabel": "Daily Tokens by provider",
+        "rangeTotal": "Range Tokens",
+        "total": "Total",
+        "tokens": "Tokens",
+        "others": "Others"
+      },
+      "totalCard": {
+        "label": "{range} Tokens",
+        "calls": "{calls} calls · {avg} tokens per call",
+        "avgTtft": "Avg TTFT",
+        "avgDuration": "Avg duration",
+        "avgTpm": "Avg TPM",
+        "successRate": "Success rate"
+      },
+      "empty": {
+        "chart": "No data",
+        "providers": "No provider calls recorded",
+        "models": "No model calls recorded",
+        "sessions": "No session usage recorded"
+      },
+      "errors": {
+        "badResponse": "The statistics endpoint returned an unrecognized payload.",
+        "loadFailed": "Failed to load Token statistics. Please try again.",
+        "bridgeMissing": "AstrBot plugin view bridge not found. Open this view from the AstrBot WebUI plugin page."
+      },
+      "footer": {
+        "line": "Since {first} · {tokens} tokens ({calls} calls) · Source: AstrBot provider_stats · plugin v{version}",
+        "empty": "AstrBot has not recorded any Token usage yet. Chat with the bot first."
+      }
+    }
+  },
+  "pages": {
+    "token-usage": {
+      "title": "Token Usage",
+      "description": "Token usage trends, model and provider rankings for the last 30, 90, 180 days or 1 year."
+    }
+  }
+}

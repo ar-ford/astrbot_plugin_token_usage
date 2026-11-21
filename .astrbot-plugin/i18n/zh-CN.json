@@ -1,0 +1,81 @@
+{
+  "metadata": {
+    "display_name": "Token 用量",
+    "short_desc": "在插件页面查看最近 30 天到 1 年的 Token 使用趋势、模型与服务商排名。",
+    "desc": "在 AstrBot WebUI 的插件页面中，以「数据与日志 → 统计」同款界面查看 Token 使用情况，支持近 30 天、90 天、180 天和 1 年范围。"
+  },
+  "views": {
+    "token-usage": {
+      "title": "Token 用量",
+      "description": "查看最近 30 天、90 天、180 天或 1 年的 Token 使用趋势、模型与服务商排名。",
+      "pageTitle": "Token 用量统计",
+      "subtitle": "{range} · {timezone} 时区 · 数据来自 AstrBot 模型调用记录",
+      "localTimezone": "本地",
+      "refresh": "刷新",
+      "updatedAt": "更新于 {time}",
+      "rankDetail": "{tokens} Tokens · {calls} 次调用 · 占比 {share}",
+      "ranges": {
+        "days": "近 {days} 天",
+        "oneYear": "近 1 年",
+        "daysShort": "{days} 天",
+        "oneYearShort": "1 年"
+      },
+      "cards": {
+        "rangeTokens": "{range} Tokens",
+        "todayTokens": "今日 Tokens",
+        "calls": "调用次数",
+        "successRate": "成功率",
+        "avgTtft": "平均首字耗时",
+        "sessions": "活跃会话",
+        "errorsTitle": "{count} 次失败调用"
+      },
+      "sections": {
+        "trend": "Token 趋势",
+        "providerRanking": "服务商排名",
+        "modelCalls": "模型调用",
+        "modelRanking": "模型排名",
+        "sessionRanking": "会话用量排名"
+      },
+      "chart": {
+        "areaTitle": "每日 Token 用量",
+        "areaNote": "按本地日期汇总输入与输出 Token · {timezone}",
+        "areaLabel": "每日 Token 用量趋势",
+        "stackTitle": "各服务商每日 Token",
+        "stackLabel": "各服务商每日 Token 用量",
+        "rangeTotal": "区间总 Tokens",
+        "total": "合计",
+        "tokens": "Tokens",
+        "others": "其他"
+      },
+      "totalCard": {
+        "label": "{range}总 Tokens",
+        "calls": "共 {calls} 次调用 · 平均每调用 {avg} Tokens",
+        "avgTtft": "平均首字耗时",
+        "avgDuration": "平均耗时",
+        "avgTpm": "平均 TPM",
+        "successRate": "成功率"
+      },
+      "empty": {
+        "chart": "暂无数据",
+        "providers": "暂无服务商调用记录",
+        "models": "暂无模型调用记录",
+        "sessions": "暂无会话用量记录"
+      },
+      "errors": {
+        "badResponse": "统计接口返回了无法识别的数据。",
+        "loadFailed": "加载 Token 统计失败，请稍后重试。",
+        "bridgeMissing": "未检测到 AstrBot 插件视图桥接，请从 AstrBot WebUI 的插件页面打开本视图。"
+      },
+      "footer": {
+        "line": "统计自 {first} · 共 {tokens} Tokens（{calls} 次调用） · 数据来自 AstrBot provider_stats · 插件 v{version}",
+        "empty": "AstrBot 尚未记录 Token 用量，先和机器人聊几句再来查看吧。"
+      }
+    }
+  },
+  "pages": {
+    "token-usage": {
+      "title": "Token 用量",
+      "description": "查看最近 30 天、90 天、180 天或 1 年的 Token 使用趋势、模型与服务商排名。"
+    }
+  }
+}
