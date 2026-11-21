@@ -78,6 +78,8 @@ git push -u origin main
 
 之后每次发版只需提升 `metadata.yaml` 的 `version` 并推送。插件不在自身目录保存任何运行数据，因此更新、重装不会丢失统计（统计本身来自 AstrBot 数据库）。
 
+> 如果远端仓库里已经有手动上传的 ZIP 等内容、与本地历史没有关联，首次推送需要执行 `git push -u origin main --force` 用插件源码仓库替换远端内容。
+
 ## 实现说明
 
 - `main.py` 注册 `GET /astrbot_plugin_token_usage/stats`，读取 `provider_stats` 表，在 SQLite 中按 UTC 小时聚合，再用 Python 换算成本地日期，避免一次性把整月数据读进内存。
